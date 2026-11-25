@@ -1,0 +1,71 @@
+Windows PowerShell 5.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Loading personal and system profiles took 14504ms.
+(base) PS C:\windows\system32> ssh aise4010@192.168.137.141
+The authenticity of host '192.168.137.141 (192.168.137.141)' can't be established.
+ED25519 key fingerprint is SHA256:y27vpzQjDWoM6FcKkLG2L0HIydE9hyuEOSa9DqL0S3k.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.137.141' (ED25519) to the list of known hosts.
+aise4010@192.168.137.141's password:
+Welcome to Ubuntu 24.04.4 LTS (GNU/Linux 6.8.12-1021-tegra aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+Last login: Tue Nov 24 17:37:44 2026 from 192.168.137.1
+aise4010@aise4010:~$ mkdir -p project_group07
+aise4010@aise4010:~$ ls
+Desktop  Documents  Downloads  lab6_111  Music  Pictures  project_group07  Public  Templates  Videos
+aise4010@aise4010:~$ cd project_group07
+python3 jetson_forecast.py 300
+aise4010 | NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super | Python 3.12.3 | NumPy 1.26.4 | 6 CPU cores
+last hour in the data: 2018-06-26 19:00 (OT 46.0 °C) -> forecast for the next 24 hours
+3461 test windows, timing 300 single-window forecasts per model
+
+model                      parameters  max |NumPy-Keras|  test MAE (°C)  ms/forecast  +1 h (°C) +24 h (°C)
+MLP (tuned)                    95,960         6.9e-06 °C          2.879        0.098       44.8       45.7
+Transformer (grid + BO)        84,056         1.2e-05 °C          2.861        1.167       44.6       44.7
+
+peak RAM of this program (all models + test data + Python): 49 MB
+aise4010@aise4010:~/project_group07$ python3 jetson_forecast.py 3000
+aise4010 | NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super | Python 3.12.3 | NumPy 1.26.4 | 6 CPU cores
+last hour in the data: 2018-06-26 19:00 (OT 46.0 °C) -> forecast for the next 24 hours
+3461 test windows, timing 3000 single-window forecasts per model
+
+model                      parameters  max |NumPy-Keras|  test MAE (°C)  ms/forecast  +1 h (°C) +24 h (°C)
+MLP (tuned)                    95,960         6.9e-06 °C          2.879        0.099       44.8       45.7
+Transformer (grid + BO)        84,056         1.2e-05 °C          2.861        1.086       44.6       44.7
+
+peak RAM of this program (all models + test data + Python): 49 MB
+aise4010@aise4010:~/project_group07$ python3 jetson_forecast.py 30000
+aise4010 | NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super | Python 3.12.3 | NumPy 1.26.4 | 6 CPU cores
+last hour in the data: 2018-06-26 19:00 (OT 46.0 °C) -> forecast for the next 24 hours
+3461 test windows, timing 30000 single-window forecasts per model
+
+model                      parameters  max |NumPy-Keras|  test MAE (°C)  ms/forecast  +1 h (°C) +24 h (°C)
+MLP (tuned)                    95,960         6.9e-06 °C          2.879        0.098       44.8       45.7
+Transformer (grid + BO)        84,056         1.2e-05 °C          2.861        1.173       44.6       44.7
+
+peak RAM of this program (all models + test data + Python): 49 MB
+aise4010@aise4010:~/project_group07$ sudo shutdown -h now
+[sudo] password for aise4010:
+
+Broadcast message from root@aise4010 on pts/3 (Tue 2026-11-24 17:59:20 EST):
+
+The system will power off now!
+
+client_loop: send disconnect: Connection reset
+(base) PS C:\windows\system32>
