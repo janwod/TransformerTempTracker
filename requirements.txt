@@ -5,4 +5,8 @@ pandas==3.0.6
 matplotlib==3.11.2
 ipykernel==7.3.0
 notebook==7.6.2
-tensorflow==2.21
+tensorflow==2.21.0
+# Installed with TensorFlow; pinned because the network-graph and MC-dropout helpers use the Keras 3 model API.
+keras==3.15.1
+
+# The Jetson side (jetson/jetson_forecast.py) only needs NumPy.
