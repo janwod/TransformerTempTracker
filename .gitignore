@@ -1,2 +1,8 @@
 .venv/
 .ipynb_checkpoints/
+__pycache__/
+
+# Written to the repo root every time the notebook runs (the board evidence lives in jetson/)
+/project_models.npz
+/jetson_forecast.py
+/models/
